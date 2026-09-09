@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visita Nocturna Castell i Font d'Os de Balaguer | A 5 min de les Avellanes</title>
-    <meta name="description" content="Descobreix la màgia nocturna del Castell i la Font d'Os de Balaguer. Ruta guiada gratuïta a només 5 minuts del Monestir de les Avellanes. Reserva la teva plaça!">
+    <title>Visitas Guiadas Gratuitas vs Tours de Pago: Guía Completa | Racons de Os</title>
+    <meta name="description" content="Descubre las ventajas, riesgos y cómo elegir entre un free tour y un tour de pago en España. Guía práctica y consejos sobre propinas y plataformas.">
+    
+    <!-- Open Graph para Redes Sociales -->
+    <meta property="og:title" content="Visitas Guiadas Gratuitas vs Tours de Pago">
+    <meta property="og:description" content="¿Cómo elegir la mejor opción para tu viaje? Analizamos precios, plataformas y la experiencia de los guías locales.">
+    <meta property="og:type" content="article">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-dark: #0b0f19;
-            --bg-card: #151c2e;
-            --gold: #d4af37;
-            --text-light: #f4f4f6;
-            --text-muted: #a0a6b8;
-            --whatsapp-green: #25d366;
-            --insta-pink: #e1306c;
-            --google-blue: #4285f4;
+            --primary: #1e293b;
+            --accent: #d97706;
+            --accent-hover: #b45309;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #334155;
+            --text-dark: #0f172a;
+            --border-color: #e2e8f0;
+            --max-width: 760px;
         }
 
         * {
@@ -30,455 +36,264 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            padding-bottom: 40px;
+            font-family: 'Merriweather', serif;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            padding-bottom: 60px;
         }
 
+        /* Header / Navbar */
         header {
-            text-align: center;
-            padding: 40px 20px 20px;
-            background: linear-gradient(180deg, rgba(11,15,25,0.8) 0%, rgba(11,15,25,1) 100%), 
-                        radial-gradient(circle at center, #1e2942 0%, var(--bg-dark) 70%);
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 1rem 0;
+            font-family: 'Inter', sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .badge {
-            display: inline-block;
-            background-color: rgba(212, 175, 55, 0.15);
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h1 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        p.subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 15px;
-        }
-
-        .container {
-            max-width: 800px;
+        .nav-container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .card {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .card h2 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 8px;
-        }
-
-        .card h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--gold);
-            font-size: 1.2rem;
-            margin: 20px 0 10px 0;
-        }
-
-        .card p {
-            margin-bottom: 12px;
-            color: var(--text-light);
-        }
-
-        .card ul {
-            margin-bottom: 15px;
-            padding-left: 20px;
-            color: var(--text-muted);
-        }
-
-        .card li {
-            margin-bottom: 6px;
-        }
-
-        .article-intro {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            font-style: italic;
-            border-left: 3px solid var(--gold);
-            padding-left: 15px;
-            margin-bottom: 20px;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .info-item div h4 {
-            font-size: 0.95rem;
-            color: var(--gold);
-        }
-
-        .info-item div p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .actions {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-whatsapp {
-            background-color: var(--whatsapp-green);
-            color: #ffffff;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #1eb954;
-        }
-
-        .btn-gold {
-            background-color: var(--gold);
-            color: var(--bg-dark);
-            font-weight: 700;
-        }
-
-        .btn-gold:hover {
-            background-color: #c39e2e;
-        }
-
-        .btn-insta {
-            background-color: transparent;
-            color: #ffffff;
-            border: 2px solid var(--insta-pink);
-        }
-
-        .btn-insta:hover {
-            background-color: var(--insta-pink);
-        }
-
-        .btn-maps {
-            background-color: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-        }
-
-        .btn-maps:hover {
-            background-color: var(--gold);
-            color: var(--bg-dark);
-        }
-
-        /* FORMULARI DE COMENTARIS */
-        .comment-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            text-align: left;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        .form-group input, 
-        .form-group textarea, 
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border-radius: 6px;
-            background-color: rgba(255,255,255,0.05);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--text-light);
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .form-group input:focus, 
-        .form-group textarea:focus, 
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--gold);
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        /* LLISTAT DE COMENTARIS */
-        .comments-list {
-            margin-top: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .comment-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid var(--gold);
-            padding: 15px;
-            border-radius: 0 8px 8px 0;
-            text-align: left;
-        }
-
-        .comment-header {
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
         }
 
-        .comment-author {
-            font-weight: 600;
-            color: var(--gold);
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #fff;
+            text-decoration: none;
         }
 
-        .comment-stars {
-            color: #ffca28;
+        .logo span {
+            color: var(--accent);
+        }
+
+        .btn-header {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
             font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.2s;
         }
 
-        .comment-text {
-            color: var(--text-light);
-            font-size: 0.95rem;
+        .btn-header:hover {
+            background-color: var(--accent-hover);
         }
 
-        footer {
+        /* Container Principal */
+        .container {
+            max-width: var(--max-width);
+            margin: 2.5rem auto 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Encapçalament de l'Article */
+        .article-header {
+            margin-bottom: 2.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .category-tag {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            line-height: 1.25;
+            color: var(--text-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #475569;
+            font-weight: 300;
+        }
+
+        /* Caixes d'estil / Destacats */
+        .callout-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .callout-box h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contingut de l'article */
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin: 2.5rem 0 1rem 0;
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Banner CTA Racons de Os */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin: 3.5rem 0;
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            margin-top: 30px;
+            font-family: 'Inter', sans-serif;
         }
 
-        @media (min-width: 600px) {
-            h1 { font-size: 2.8rem; }
-            .grid-2 {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
+        .cta-banner h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .cta-banner p {
+            color: #cbd5e1;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.35rem; }
+            body { font-size: 1rem; }
+            .cta-banner { padding: 1.5rem 1rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <span class="badge">📍 A 5 min del Monestir de les Avellanes</span>
-            <h1>Visita Nocturna a Os de Balaguer</h1>
-            <p class="subtitle">Descobreix la màgia de la font i el castell il·luminats sota el cel estrellat de la Noguera.</p>
+        <div class="nav-container">
+            <a href="#" class="logo">Racons de <span>Os</span></a>
+            <a href="https://instagram.com/raconsdeos" target="_blank" class="btn-header">@raconsdeos</a>
         </div>
     </header>
 
     <main class="container">
         
-        <!-- SECCIÓ DEL TOUR -->
-        <section class="card">
-            <h2>El Tour Nocturn</h2>
-            <p>Quan el sol es pon, Os de Balaguer es transforma. Acompanya'ns en un passeig per descobrir els secrets del castell medieval, el so relaxant de la font i les llegendes de la comarca.</p>
-            
-            <div class="info-grid">
-                <div class="info-item">
-                    <span style="font-size:1.4rem;">⏱️</span>
-                    <div>
-                        <h4>Durada</h4>
-                        <p>1 Hora (Passeig suau)</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span style="font-size:1.4rem;">🚗</span>
-                    <div>
-                        <h4>Ubicació / Sortida</h4>
-                        <p>Plaça de la Font (Os de Balaguer)</p>
-                    </div>
-                </div>
-                <div class="info-item">
-                    <span style="font-size:1.4rem;">🎟️</span>
-                    <div>
-                        <h4>Preu</h4>
-                        <p>Free Tour (La voluntat o un comentari 💬)</p>
-                    </div>
-                </div>
-            </div>
+        <article>
+            <header class="article-header">
+                <span class="category-tag">Turismo & Rutas Locales</span>
+                <h1>Visitas guiadas gratuitas frente a tours de pago: ventajas, riesgos y cuándo elegir cada una</h1>
+                <p class="lead">Si has buscado alguna vez qué hacer en una ciudad nueva, probablemente te hayas topado con la opción del free tour. La diferencia entre un recorrido memorable y una tarde perdida está en saber dónde mirar antes de confirmar la reserva.</p>
+            </header>
 
-            <!-- BOTONS D'ACCIÓ -->
-            <div class="actions">
-                <!-- Reserva WhatsApp -->
-                <a href="https://wa.me/34615364063?text=Hola!%20Estic%20allotjat%20a%20les%20Avellanes%20i%20m'interessa%20el%20tour%20nocturn." class="btn btn-whatsapp" target="_blank">
-                    💬 Reserva per WhatsApp
-                </a>
+            <p>En las principales ciudades turísticas de España (Madrid, Barcelona, Sevilla, Granada, Valencia), la oferta de free tours se ha multiplicado. Hay guías excelentes y guías mediocres, plataformas con miles de reseñas verificadas y directorios con poca o ninguna supervisión[cite: 1].</p>
 
-                <div class="grid-2">
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/raconsdeos/" class="btn btn-insta" target="_blank">
-                        📸 @raconsdeos
-                    </a>
-                    <!-- Google Maps -->
-                    <a href="https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+de+la+Font+Os+de+Balaguer" class="btn btn-maps" target="_blank">
-                        🗺️ Com Arribar (Maps)
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ARTICLE INTEGRAT PER A POSICIONAMENT SEO -->
-        <article class="card">
-            <h2>Guia del Viatger: Visites Guiades Gratuïtes vs Tours de Pago</h2>
-            <p class="article-intro">Si busques què fer durant la teva escapada, és molt probable que et topis amb la modalitat del "free tour". Com funciona exactament aquest sistema i com es diferencia d'una visita de pagament tradicional?</p>
-
-            <h3>¿Qué significa realmente que un free tour sea "gratuito"?</h3>
-            <p>El nombre lleva a confusión. El recorrido no tiene precio fijo, pero no es gratis: funciona mediante propina voluntaria al final, lo que convierte al viajero en quien decide cuánto vale la experiencia. El guía cobra en función de cuántas personas se apuntan y de lo generoso que sea el grupo, sin salario fijo ni garantía de ingresos estables[cite: 1].</p>
+            <h2>¿Qué significa realmente que un free tour sea "gratuito"?</h2>
+            <p>El nombre lleva a confusión. El recorrido no tiene precio fijo, pero no es gratis: funciona mediante propina voluntaria al final, lo que convierte al viajero en quien decide cuánto vale la experiencia[cite: 1]. El guía cobra en función de cuántas personas se apuntan y de lo generoso que sea el grupo, sin salario fijo ni garantía de ingresos estables[cite: 1].</p>
             <p>No es caridad ni servicio público. Es un acuerdo informal donde el valor se paga a posteriori[cite: 1].</p>
 
-            <h3>Cómo elegir un free tour sin perder el tiempo</h3>
-            <p>Hay centenares de opciones en las principales ciudades de España[cite: 1]. La clave está en saber qué datos mirar antes de confirmar[cite: 1]:</p>
+            <!-- Banner Promocional de la Visita Nocturna -->
+            <div class="cta-banner">
+                <h3>¿Buscas una experiencia local auténtica?</h3>
+                <p>Descubre la <strong>Visita Nocturna al Castillo y Font d'Os de Balaguer</strong> (a solo 5 minutos de Les Avellanes). Un recorrido exclusivo por la historia y el cielo nocturno del Montsec.</p>
+                <a href="https://instagram.com/raconsdeos" class="btn-cta" target="_blank">Reservar o consultar información en Instagram</a>
+            </div>
+
+            <h2>Cómo elegir un free tour sin perder el tiempo en reseñas vacías</h2>
+            <p>La clave está en saber dónde buscar y qué datos mirar antes de confirmar[cite: 1]:</p>
             <ul>
-                <li><strong>Plataformas principales:</strong> GuruWalk, Freetour.com y Civitatis concentran gran parte de la oferta con opiniones verificadas[cite: 1].</li>
-                <li><strong>Número de reseñas:</strong> Es más fiable un tour con 14.000 opiniones y un 4,8 sobre 5 que uno con solo 20 reseñas y nota perfecta[cite: 1].</li>
-                <li><strong>Detalles del grupo:</strong> Comprueba el idioma del recorrido, el tamaño máximo del grupo y si es apto para niños[cite: 1].</li>
+                <li><strong>GuruWalk:</strong> Concentra una de las mayores bases de datos con valoraciones reales[cite: 1].</li>
+                <li><strong>Freetour.com y Civitatis:</strong> Ofrecen catálogos amplios y verificados en España[cite: 1].</li>
+                <li><strong>El número de reseñas importa más que la nota media:</strong> Un tour con 14.000 opiniones y un 4,8 es más fiable que uno con solo 20 reseñas impecables[cite: 1].</li>
             </ul>
 
-            <h3>La propina: cuánto dar sin incomodidad</h3>
-            <p>La norma general recomendada en España oscila entre los 10 € y 15 € por persona para un recorrido estándar de dos horas en ciudades como Madrid, Sevilla o Valencia[cite: 1] (y entre 12 € y 18 € en Barcelona)[cite: 1]. En grupos más reducidos o tours con atención muy personalizada, una aportación mayor recompensa el trabajo exclusivo del guía[cite: 1].</p>
+            <h2>La propina en el free tour: cuánto dar sin incomodidad</h2>
+            <p>Decide el importe antes de que empiece el tour, no cuando el guía pasa el sombrero[cite: 1]:</p>
+            <ul>
+                <li><strong>Madrid, Sevilla, Valencia, Granada:</strong> Entre 10 € y 15 € por persona para 2 horas[cite: 1].</li>
+                <li><strong>Barcelona:</strong> Entre 12 € y 18 € por persona[cite: 1].</li>
+                <li><strong>Grupos grandes o tours cortos:</strong> Entre 5 € y 10 € por persona[cite: 1].</li>
+            </ul>
 
-            <h3>Rutas locales i projectes independents</h3>
-            <p>Organitzar un recorregut requereix un bon fil narratiu i connexió amb l'entorn[cite: 1]. El projecte <strong>raconsdeos.github.io</strong> neix precisament per donar visibilitat i eines a rutes locals independents fora dels grans intermediaris turístics[cite: 1].</p>
+            <h2>Para quien quiere organizar su propio recorrido</h2>
+            <p>Un itinerario sólido necesita un hilo narrativo, no solo una lista de monumentos[cite: 1]. La duración óptima está entre 90 y 120 minutos[cite: 1]. Para quienes quieren ir más allá y gestionar su propia plataforma de rutas locales sin depender de intermediarios, el proyecto de <strong>Racons de Os</strong> apunta precisamente en esa dirección[cite: 1].</p>
+
+            <div class="callout-box">
+                <h4>Proyecto Open Source Racons de Os</h4>
+                <p>Estamos reconstruyendo la plataforma para ofrecer recursos independientes a guías locales[cite: 1]. Puedes seguir el desarrollo y novedades en nuestro repositorio oficial de GitHub: <a href="https://github.com/raconsdeos/tour" target="_blank">github.com/raconsdeos/tour</a>[cite: 1].</p>
+            </div>
+
         </article>
 
-        <!-- SECCIÓ DE COMENTARIS I RESSENYES -->
-        <section class="card">
-            <h2>💬 Comentaris i Opinions</h2>
-            <p>Has fet el tour amb nosaltres? Deixa el teu comentari a continuació!</p>
-
-            <!-- FORMULARI PER DEIXAR COMENTARI -->
-            <form id="commentForm" class="comment-form">
-                <div class="form-group">
-                    <label for="authorName">El teu nom o el de la teva població:</label>
-                    <input type="text" id="authorName" placeholder="Ex: Maria G. (Girona)" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="starRating">Puntuació:</label>
-                    <select id="starRating">
-                        <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (Excel·lent)</option>
-                        <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (Molt bo)</option>
-                        <option value="⭐⭐⭐">⭐⭐⭐ (Correcte)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="commentContent">El teu comentari:</label>
-                    <textarea id="commentContent" rows="4" placeholder="Escriu el teu comentari sobre la visita..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-gold">Publicar el meu comentari</button>
-            </form>
-
-            <!-- LLISTA ON ES MOSTRARAN ELS COMENTARIS -->
-            <div class="comments-list" id="commentsList">
-                <div class="comment-item">
-                    <div class="comment-header">
-                        <span class="comment-author">Maria G. (Girona)</span>
-                        <span class="comment-stars">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <p class="comment-text">Estàvem allotjats al Monestir sense saber què fer a la nit. Aquest tour va ser la gran sorpresa del viatge. El castell il·luminat és impressionant!</p>
-                </div>
-            </div>
-        </section>
+        <footer>
+            <p>&copy; 2026 Racons de Os — Visita Nocturna Castell i Font d'Os de Balaguer</p>
+            <p>Sigue nuestro proyecto en <a href="https://instagram.com/raconsdeos" target="_blank">Instagram @raconsdeos</a> | <a href="https://github.com/raconsdeos/tour" target="_blank">GitHub</a>[cite: 1]</p>
+        </footer>
 
     </main>
 
-    <footer>
-        <p>© 2026 Free Tour Os de Balaguer. Tots els drets reservats.</p>
-    </footer>
-
-    <!-- SCRIPT EN JAVASCRIPT PER GUARDAR I MOSTRAR COMENTARIS -->
-    <script>
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('authorName').value.trim();
-            const rating = document.getElementById('starRating').value;
-            const text = document.getElementById('commentContent').value.trim();
-
-            if (!name || !text) return;
-
-            const commentItem = document.createElement('div');
-            commentItem.className = 'comment-item';
-
-            commentItem.innerHTML = `
-                <div class="comment-header">
-                    <span class="comment-author">${escapeHtml(name)}</span>
-                    <span class="comment-stars">${rating}</span>
-                </div>
-                <p class="comment-text">${escapeHtml(text)}</p>
-            `;
-
-            const list = document.getElementById('commentsList');
-            list.insertBefore(commentItem, list.firstChild);
-
-            document.getElementById('commentForm').reset();
-
-            alert('Gràcies per deixar el teu comentari!');
-        });
-
-        function escapeHtml(string) {
-            const div = document.createElement('div');
-            div.innerText = string;
-            return div.innerHTML;
-        }
-    </script>
- 
 </body>
 </html>
