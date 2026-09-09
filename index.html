@@ -97,6 +97,37 @@
             padding-bottom: 8px;
         }
 
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin: 20px 0 10px 0;
+        }
+
+        .card p {
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .card ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .card li {
+            margin-bottom: 6px;
+        }
+
+        .article-intro {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            font-style: italic;
+            border-left: 3px solid var(--gold);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -292,6 +323,7 @@
 
     <main class="container">
         
+        <!-- SECCIÓ DEL TOUR -->
         <section class="card">
             <h2>El Tour Nocturn</h2>
             <p>Quan el sol es pon, Os de Balaguer es transforma. Acompanya'ns en un passeig per descobrir els secrets del castell medieval, el so relaxant de la font i les llegendes de la comarca.</p>
@@ -333,12 +365,36 @@
                         📸 @raconsdeos
                     </a>
                     <!-- Google Maps -->
-                    <a href="https://www.google.com/maps/search/?api=1&query=Plaça+de+la+Font+Os+de+Balaguer" class="btn btn-maps" target="_blank">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Pla%C3%A7a+de+la+Font+Os+de+Balaguer" class="btn btn-maps" target="_blank">
                         🗺️ Com Arribar (Maps)
                     </a>
                 </div>
             </div>
         </section>
+
+        <!-- ARTICLE INTEGRAT PER A POSICIONAMENT SEO -->
+        <article class="card">
+            <h2>Guia del Viatger: Visites Guiades Gratuïtes vs Tours de Pago</h2>
+            <p class="article-intro">Si busques què fer durant la teva escapada, és molt probable que et topis amb la modalitat del "free tour". Com funciona exactament aquest sistema i com es diferencia d'una visita de pagament tradicional?</p>
+
+            <h3>¿Qué significa realmente que un free tour sea "gratuito"?</h3>
+            <p>El nombre lleva a confusión. El recorrido no tiene precio fijo, pero no es gratis: funciona mediante propina voluntaria al final, lo que convierte al viajero en quien decide cuánto vale la experiencia. El guía cobra en función de cuántas personas se apuntan y de lo generoso que sea el grupo, sin salario fijo ni garantía de ingresos estables[cite: 1].</p>
+            <p>No es caridad ni servicio público. Es un acuerdo informal donde el valor se paga a posteriori[cite: 1].</p>
+
+            <h3>Cómo elegir un free tour sin perder el tiempo</h3>
+            <p>Hay centenares de opciones en las principales ciudades de España[cite: 1]. La clave está en saber qué datos mirar antes de confirmar[cite: 1]:</p>
+            <ul>
+                <li><strong>Plataformas principales:</strong> GuruWalk, Freetour.com y Civitatis concentran gran parte de la oferta con opiniones verificadas[cite: 1].</li>
+                <li><strong>Número de reseñas:</strong> Es más fiable un tour con 14.000 opiniones y un 4,8 sobre 5 que uno con solo 20 reseñas y nota perfecta[cite: 1].</li>
+                <li><strong>Detalles del grupo:</strong> Comprueba el idioma del recorrido, el tamaño máximo del grupo y si es apto para niños[cite: 1].</li>
+            </ul>
+
+            <h3>La propina: cuánto dar sin incomodidad</h3>
+            <p>La norma general recomendada en España oscila entre los 10 € y 15 € por persona para un recorrido estándar de dos horas en ciudades como Madrid, Sevilla o Valencia[cite: 1] (y entre 12 € y 18 € en Barcelona)[cite: 1]. En grupos más reducidos o tours con atención muy personalizada, una aportación mayor recompensa el trabajo exclusivo del guía[cite: 1].</p>
+
+            <h3>Rutas locales i projectes independents</h3>
+            <p>Organitzar un recorregut requereix un bon fil narratiu i connexió amb l'entorn[cite: 1]. El projecte <strong>raconsdeos.github.io</strong> neix precisament per donar visibilitat i eines a rutes locals independents fora dels grans intermediaris turístics[cite: 1].</p>
+        </article>
 
         <!-- SECCIÓ DE COMENTARIS I RESSENYES -->
         <section class="card">
@@ -371,7 +427,6 @@
 
             <!-- LLISTA ON ES MOSTRARAN ELS COMENTARIS -->
             <div class="comments-list" id="commentsList">
-                <!-- Comentari inicial de Maria G. -->
                 <div class="comment-item">
                     <div class="comment-header">
                         <span class="comment-author">Maria G. (Girona)</span>
@@ -393,14 +448,12 @@
         document.getElementById('commentForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Agafar dades dels camps
             const name = document.getElementById('authorName').value.trim();
             const rating = document.getElementById('starRating').value;
             const text = document.getElementById('commentContent').value.trim();
 
             if (!name || !text) return;
 
-            // Crear l'element del nou comentari
             const commentItem = document.createElement('div');
             commentItem.className = 'comment-item';
 
@@ -412,23 +465,20 @@
                 <p class="comment-text">${escapeHtml(text)}</p>
             `;
 
-            // Afegir al principi de la llista
             const list = document.getElementById('commentsList');
             list.insertBefore(commentItem, list.firstChild);
 
-            // Netejar el formulari
             document.getElementById('commentForm').reset();
 
             alert('Gràcies per deixar el teu comentari!');
         });
 
-        // Funció de seguretat per evitar text maliciós
         function escapeHtml(string) {
             const div = document.createElement('div');
             div.innerText = string;
             return div.innerHTML;
         }
     </script>
-
+ 
 </body>
 </html>
