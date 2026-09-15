@@ -1,32 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visitas Guiadas Gratuitas vs Tours de Pago: Guía Completa | Racons de Os</title>
-    <meta name="description" content="Descubre las ventajas, riesgos y cómo elegir entre un free tour y un tour de pago en España. Guía práctica y consejos sobre propinas y plataformas.">
-    
-    <!-- Open Graph para Redes Sociales -->
-    <meta property="og:title" content="Visitas Guiadas Gratuitas vs Tours de Pago">
-    <meta property="og:description" content="¿Cómo elegir la mejor opción para tu viaje? Analizamos precios, plataformas y la experiencia de los guías locales.">
-    <meta property="og:type" content="article">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
-
+    <title>Racons de Os | Visites Guiades a Os de Balaguer</title>
+    <meta name="description" content="Descobreix la història, el castell i la natura d'Os de Balaguer amb les nostres visites guiades locals. Reserva la teva experiència.">
     <style>
+        /* CSS RESET & VARIABLES */
         :root {
-            --primary: #1e293b;
-            --accent: #d97706;
-            --accent-hover: #b45309;
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --text-main: #334155;
-            --text-dark: #0f172a;
-            --border-color: #e2e8f0;
-            --max-width: 760px;
+            --primary-color: #2c4a3e; /* Verd natura/històric */
+            --accent-color: #d97724;  /* Tono terra/taronja de conversió */
+            --bg-light: #f8f6f2;
+            --text-color: #2b2b2b;
+            --white: #ffffff;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         }
 
         * {
@@ -36,264 +23,272 @@
         }
 
         body {
-            font-family: 'Merriweather', serif;
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--text-main);
-            background-color: var(--bg-body);
-            padding-bottom: 60px;
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
         }
 
-        /* Header / Navbar */
+        /* HEADER & NAVIGATION */
         header {
-            background-color: var(--primary);
-            color: #ffffff;
-            padding: 1rem 0;
-            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .nav-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 1.5rem;
         }
 
         .logo {
+            font-size: 1.5rem;
             font-weight: 700;
-            font-size: 1.2rem;
-            color: #fff;
+            color: var(--primary-color);
             text-decoration: none;
         }
 
         .logo span {
-            color: var(--accent);
+            color: var(--accent-color);
         }
 
-        .btn-header {
-            background-color: var(--accent);
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: background 0.2s;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .btn-header:hover {
-            background-color: var(--accent-hover);
+        .nav-links a:hover {
+            color: var(--accent-color);
         }
 
-        /* Container Principal */
-        .container {
-            max-width: var(--max-width);
-            margin: 2.5rem auto 0 auto;
-            padding: 0 1.5rem;
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 1.5rem;
         }
 
-        /* Encapçalament de l'Article */
-        .article-header {
-            margin-bottom: 2.5rem;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .category-tag {
-            color: var(--accent);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        h1 {
-            font-size: 2.4rem;
-            line-height: 1.25;
-            color: var(--text-dark);
-            font-weight: 700;
+        .hero h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
-        .lead {
+        .hero p {
             font-size: 1.25rem;
-            line-height: 1.6;
-            color: #475569;
-            font-weight: 300;
-        }
-
-        /* Caixes d'estil / Destacats */
-        .callout-box {
-            background-color: #f1f5f9;
-            border-left: 4px solid var(--accent);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-        }
-
-        .callout-box h4 {
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Contingut de l'article */
-        h2 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.6rem;
-            color: var(--text-dark);
-            margin: 2.5rem 0 1rem 0;
-            line-height: 1.3;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-        }
-
-        ul {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Banner CTA Racons de Os */
-        .cta-banner {
-            background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
-            color: #ffffff;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            margin: 3.5rem 0;
-            text-align: center;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .cta-banner h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .cta-banner p {
-            color: #cbd5e1;
-            font-size: 1rem;
             max-width: 600px;
-            margin: 0 auto 1.5rem auto;
+            margin: 0 auto 2rem auto;
         }
 
-        .btn-cta {
+        .btn-primary {
             display: inline-block;
-            background-color: var(--accent);
-            color: #ffffff;
-            padding: 0.85rem 1.75rem;
-            border-radius: 8px;
-            font-weight: 600;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
             text-decoration: none;
-            transition: background 0.2s;
+            font-weight: 700;
+            transition: background-color 0.3s;
         }
 
-        .btn-cta:hover {
-            background-color: var(--accent-hover);
+        .btn-primary:hover {
+            background-color: #b86018;
         }
 
-        /* Footer */
-        footer {
-            margin-top: 4rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
+        /* SECTIONS GENERAL */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
             text-align: center;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            color: #64748b;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
         }
 
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
+        /* LA VISITA / DETALLS */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
-        /* Responsive */
-        @media (max-width: 640px) {
-            h1 { font-size: 1.8rem; }
-            h2 { font-size: 1.35rem; }
-            body { font-size: 1rem; }
-            .cta-banner { padding: 1.5rem 1rem; }
+        .card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* INFORMACIÓ PRÀCTICA */
+        .info-box {
+            background-color: var(--white);
+            border-left: 5px solid var(--primary-color);
+            padding: 2rem;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        /* SOCIAL PROOF (TESTIMONIS) */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .review-card .author {
+            font-style: normal;
+            font-weight: 700;
+            margin-top: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* FOOTER & CTA FINAL */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        footer p {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; } /* En producció es pot afegir un menú hamburguesa */
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVEGACIÓ -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">Racons de <span>Os</span></a>
-            <a href="https://instagram.com/raconsdeos" target="_blank" class="btn-header">@raconsdeos</a>
+            <ul class="nav-links">
+                <li><a href="#visita">La Visita</a></li>
+                <li><a href="#info">Informació</a></li>
+                <li><a href="#opinions">Opinions</a></li>
+                <li><a href="#reserva" class="btn-primary" style="padding: 0.4rem 1rem;">Reservar</a></li>
+            </ul>
         </div>
     </header>
 
-    <main class="container">
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Descobreix l'Encant d'Os de Balaguer</h1>
+        <p>Visites guiades exclusives pel castell, els carrers històrics i els paratges naturals millor guardats del poble.</p>
+        <a href="#reserva" class="btn-primary">Reserva la teva Entrada (3€)</a>
+    </section>
+
+    <!-- LA VISITA -->
+    <section id="visita">
+        <h2 class="section-title">Què veuràs a la ruta?</h2>
+        <div class="details-grid">
+            <div class="card">
+                <h3>Castell d'Os de Balaguer</h3>
+                <p>Explora la fortalesa medieval i descobreix la seva importància històrica a la comarca.</p>
+            </div>
+            <div class="card">
+                <h3>Racons amb Història</h3>
+                <p>Passeja pels carrers de pedra, el museu de campanes i descobreix la tradició local.</p>
+            </div>
+            <div class="card">
+                <h3>Natura i Entorn</h3>
+                <p>Gaudeix de les millors vistes panoràmiques de la vall i el seu entorn natural únic.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMACIÓ PRÀCTICA -->
+    <section id="info">
+        <h2 class="section-title">Informació Pràctica</h2>
+        <div class="info-box">
+            <div class="info-item">
+                <h4>Durada</h4>
+                <p>1 hora i 30 minuts</p>
+            </div>
+            <div class="info-item">
+                <h4>Punt de Trobada</h4>
+                <p>Plaça Major d'Os de Balaguer</p>
+            </div>
+            <div class="info-item">
+                <h4>Preu</h4>
+                <p>3 € per persona (Menors de 12 anys gratis)</p>
+            </div>
+            <div class="info-item">
+                <h4>Idiomes</h4>
+                <p>Català / Castellà</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVA SOCIAL / OPINIONS -->
+    <section id="opinions">
+        <h2 class="section-title">Què diuen els visitants</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <p>"Una experiència fantàstica. El guia transmet la història d'Os de Balaguer de forma molt amena i apassionant."</p>
+                <div class="author">- Marta G.</div>
+            </div>
+            <div class="review-card">
+                <p>"Molt recomanable per fer un cap de setmana en família. La visita al castell val molt la pena."</p>
+                <div class="author">- Jordi R.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CTA RESERVA -->
+    <footer id="reserva">
+        <h2 style="margin-bottom: 1rem;">Vols acompanyar-nos en la pròxima visita?</h2>
+        <p style="margin-bottom: 2rem; opacity: 1;">Reserva la teva plaça fàcilment i assegura la teva visita guiada.</p>
+        <!-- Aquí pots enllaçar el teu botó de Stripe de 3€ -->
+        <a href="#" class="btn-primary" target="_blank">Comprar Entrada (3€)</a>
         
-        <article>
-            <header class="article-header">
-                <span class="category-tag">Turismo & Rutas Locales</span>
-                <h1>Visitas guiadas gratuitas frente a tours de pago: ventajas, riesgos y cuándo elegir cada una</h1>
-                <p class="lead">Si has buscado alguna vez qué hacer en una ciudad nueva, probablemente te hayas topado con la opción del free tour. La diferencia entre un recorrido memorable y una tarde perdida está en saber dónde mirar antes de confirmar la reserva.</p>
-            </header>
-
-            <p>En las principales ciudades turísticas de España (Madrid, Barcelona, Sevilla, Granada, Valencia), la oferta de free tours se ha multiplicado. Hay guías excelentes y guías mediocres, plataformas con miles de reseñas verificadas y directorios con poca o ninguna supervisión[cite: 1].</p>
-
-            <h2>¿Qué significa realmente que un free tour sea "gratuito"?</h2>
-            <p>El nombre lleva a confusión. El recorrido no tiene precio fijo, pero no es gratis: funciona mediante propina voluntaria al final, lo que convierte al viajero en quien decide cuánto vale la experiencia[cite: 1]. El guía cobra en función de cuántas personas se apuntan y de lo generoso que sea el grupo, sin salario fijo ni garantía de ingresos estables[cite: 1].</p>
-            <p>No es caridad ni servicio público. Es un acuerdo informal donde el valor se paga a posteriori[cite: 1].</p>
-
-            <!-- Banner Promocional de la Visita Nocturna -->
-            <div class="cta-banner">
-                <h3>¿Buscas una experiencia local auténtica?</h3>
-                <p>Descubre la <strong>Visita Nocturna al Castillo y Font d'Os de Balaguer</strong> (a solo 5 minutos de Les Avellanes). Un recorrido exclusivo por la historia y el cielo nocturno del Montsec.</p>
-                <a href="https://instagram.com/raconsdeos" class="btn-cta" target="_blank">Reservar o consultar información en Instagram</a>
-            </div>
-
-            <h2>Cómo elegir un free tour sin perder el tiempo en reseñas vacías</h2>
-            <p>La clave está en saber dónde buscar y qué datos mirar antes de confirmar[cite: 1]:</p>
-            <ul>
-                <li><strong>GuruWalk:</strong> Concentra una de las mayores bases de datos con valoraciones reales[cite: 1].</li>
-                <li><strong>Freetour.com y Civitatis:</strong> Ofrecen catálogos amplios y verificados en España[cite: 1].</li>
-                <li><strong>El número de reseñas importa más que la nota media:</strong> Un tour con 14.000 opiniones y un 4,8 es más fiable que uno con solo 20 reseñas impecables[cite: 1].</li>
-            </ul>
-
-            <h2>La propina en el free tour: cuánto dar sin incomodidad</h2>
-            <p>Decide el importe antes de que empiece el tour, no cuando el guía pasa el sombrero[cite: 1]:</p>
-            <ul>
-                <li><strong>Madrid, Sevilla, Valencia, Granada:</strong> Entre 10 € y 15 € por persona para 2 horas[cite: 1].</li>
-                <li><strong>Barcelona:</strong> Entre 12 € y 18 € por persona[cite: 1].</li>
-                <li><strong>Grupos grandes o tours cortos:</strong> Entre 5 € y 10 € por persona[cite: 1].</li>
-            </ul>
-
-            <h2>Para quien quiere organizar su propio recorrido</h2>
-            <p>Un itinerario sólido necesita un hilo narrativo, no solo una lista de monumentos[cite: 1]. La duración óptima está entre 90 y 120 minutos[cite: 1]. Para quienes quieren ir más allá y gestionar su propia plataforma de rutas locales sin depender de intermediarios, el proyecto de <strong>Racons de Os</strong> apunta precisamente en esa dirección[cite: 1].</p>
-
-            <div class="callout-box">
-                <h4>Proyecto Open Source Racons de Os</h4>
-                <p>Estamos reconstruyendo la plataforma para ofrecer recursos independientes a guías locales[cite: 1]. Puedes seguir el desarrollo y novedades en nuestro repositorio oficial de GitHub: <a href="https://github.com/raconsdeos/tour" target="_blank">github.com/raconsdeos/tour</a>[cite: 1].</p>
-            </div>
-
-        </article>
-
-        <footer>
-            <p>&copy; 2026 Racons de Os — Visita Nocturna Castell i Font d'Os de Balaguer</p>
-            <p>Sigue nuestro proyecto en <a href="https://instagram.com/raconsdeos" target="_blank">Instagram @raconsdeos</a> | <a href="https://github.com/raconsdeos/tour" target="_blank">GitHub</a>[cite: 1]</p>
-        </footer>
-
-    </main>
+        <p>&copy; 2026 Racons de Os - Projecte TFM Màrqueting Digital Turístic.</p>
+    </footer>
 
 </body>
 </html>
