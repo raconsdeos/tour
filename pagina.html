@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racons de Os | Visites Guiades a Os de Balaguer</title>
+    <meta name="description" content="Descobreix la història, el castell i la natura d'Os de Balaguer amb les nostres visites guiades locals. Reserva la teva experiència.">
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary-color: #2c4a3e; /* Verd natura/històric */
+            --whatsapp-color: #25D366; /* Verd oficial WhatsApp */
+            --whatsapp-hover: #1da851; /* Verd més fosc per al hover */
+            --bg-light: #f8f6f2;
+            --text-color: #2b2b2b;
+            --white: #ffffff;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+
+        /* HEADER & NAVEGACIÓ */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--whatsapp-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--whatsapp-color);
+        }
+
+        /* BOTÓ VERD UNIFICAT PER A TOTS ELS BOTONS */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--whatsapp-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--whatsapp-hover);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1543731068-7e0f5beff43a?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* SECCIONS GENERALS */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+        }
+
+        /* LA VISITA / DETALLS */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* INFORMACIÓ PRÀCTICA */
+        .info-box {
+            background-color: var(--white);
+            border-left: 5px solid var(--primary-color);
+            padding: 2rem;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        /* SOCIAL PROOF (TESTIMONIS) */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .review-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-style: italic;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .review-card .author {
+            font-style: normal;
+            font-weight: 700;
+            margin-top: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* FOOTER & CTA FINAL */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        footer p {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓ -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Racons de <span>Os</span></a>
+            <ul class="nav-links">
+                <li><a href="#visita">La Visita</a></li>
+                <li><a href="#info">Informació</a></li>
+                <li><a href="#opinions">Opinions</a></li>
+                <li>
+                    <a href="https://wa.me/34615364063?text=Hola!%20M'agradaria%20reservar%20una%20visita%20guiada%20amb%20Racons%20de%20Os." 
+                       class="btn-primary" 
+                       style="padding: 0.4rem 1rem;" 
+                       target="_blank">💬 Reservar</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Descobreix l'Encant d'Os de Balaguer</h1>
+        <p>Visites guiades exclusives pel castell, els carrers històrics i els paratges naturals millor guardats del poble.</p>
+        <a href="https://wa.me/34615364063?text=Hola!%20M'agradaria%20reservar%20una%20visita%20guiada%20amb%20Racons%20de%20Os." 
+           class="btn-primary" 
+           target="_blank">
+           💬 Reservar per WhatsApp
+        </a>
+    </section>
+
+    <!-- LA VISITA -->
+    <section id="visita">
+        <h2 class="section-title">Què veuràs a la ruta?</h2>
+        <div class="details-grid">
+            <div class="card">
+                <h3>Castell d'Os de Balaguer</h3>
+                <p>Explora la fortalesa medieval i descobreix la seva importància històrica a la comarca.</p>
+            </div>
+            <div class="card">
+                <h3>Racons amb Història</h3>
+                <p>Passeja pels carrers de pedra, el museu de campanes i descobreix la tradició local.</p>
+            </div>
+            <div class="card">
+                <h3>Natura i Entorn</h3>
+                <p>Gaudeix de les millors vistes panoràmiques de la vall i el seu entorn natural únic.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMACIÓ PRÀCTICA -->
+    <section id="info">
+        <h2 class="section-title">Informació Pràctica</h2>
+        <div class="info-box">
+            <div class="info-item">
+                <h4>Durada</h4>
+                <p>1 hora i 30 minuts</p>
+            </div>
+            <div class="info-item">
+                <h4>Punt de Trobada</h4>
+                <p>Plaça Major d'Os de Balaguer</p>
+            </div>
+            <div class="info-item">
+                <h4>Preu i Reserves</h4>
+                <p>Consulta preus i disponibilitat per WhatsApp</p>
+            </div>
+            <div class="info-item">
+                <h4>Idiomes</h4>
+                <p>Català / Castellà</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROVA SOCIAL / OPINIONS -->
+    <section id="opinions">
+        <h2 class="section-title">Què diuen els visitants</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <p>"Una experiència fantàstica. El guia transmet la història d'Os de Balaguer de forma molt amena i apassionant."</p>
+                <div class="author">- Marta G.</div>
+            </div>
+            <div class="review-card">
+                <p>"Molt recomanable per fer un cap de setmana en família. La visita al castell val molt la pena."</p>
+                <div class="author">- Jordi R.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CTA RESERVA VIA WHATSAPP -->
+    <footer id="reserva">
+        <h2 style="margin-bottom: 1rem;">Vols acompanyar-nos en la pròxima visita?</h2>
+        <p style="margin-bottom: 2rem; opacity: 0.9;">Reserva la teva plaça directament per WhatsApp i confirma la teva visita al moment.</p>
+        
+        <a href="https://wa.me/34615364063?text=Hola!%20M'agradaria%20reservar%20una%20visita%20guiada%20amb%20Racons%20de%20Os." 
+           class="btn-primary" 
+           target="_blank">
+           💬 Reservar per WhatsApp
+        </a>
+        
+        <p>&copy; 2026 Racons de Os - Projecte TFM Màrqueting Digital Turístic.</p>
+    </footer>
+
+</body>
+</html>
