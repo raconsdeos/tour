@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racons de Os | Free Tour a Os de Balaguer</title>
+    <meta name="description" content="Descobreix la història, el patrimoni i la natura d'Os de Balaguer amb el nostre Free Tour. Reserva la teva plaça gratuïta!">
+    
+    <!-- IMPORTAR GOOGLE FONTS (Quicksand per a tota la web) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary-color: #2c4a3e; /* Verd natura/històric */
+            --accent-color: #d2694e; /* Terracota més viu i lluminós */
+            --accent-hover: #b85438; 
+            --bg-light: #f8f6f2;
+            --text-color: #2b2b2b;
+            --white: #ffffff;
+            --font-main: 'Quicksand', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+
+        /* HEADER & NAVEGACIÓ */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            background: transparent;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: var(--font-main);
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* BOTÓ PRINCIPAL DEL MENÚ */
+        .btn-nav {
+            font-family: var(--font-main);
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            padding: 0.5rem 1.1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-nav:hover {
+            
+            color: var(--white);
+        }
+
+        /* BOTONS GRANS DE RESERVA */
+        .btn-primary {
+            font-family: var(--font-main);
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(210, 105, 78, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* HERO SECTION (Ajustat el padding vertical per compensar l'absència del botó) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.25)), url('https://infotur.scene7.com/is/image/cta/151126_t036.07-066') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 9.6rem 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 500;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85);
+        }
+
+        /* SECCIONS GENERALS */
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+        }
+
+        /* LA VISITA / TARGETES I CARRUSELS ADAPTATIUS */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel {
+            display: flex;
+            width: 100%;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            align-items: center;
+        }
+
+        .carousel::-webkit-scrollbar {
+            height: 4px;
+        }
+        .carousel::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+        .carousel::-webkit-scrollbar-track {
+            background: #333;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+            width: 100%;
+            max-height: 260px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+        .carousel-btn.prev { left: 8px; }
+        .carousel-btn.next { right: 8px; }
+        .carousel-btn:hover { background: rgba(0, 0, 0, 0.9); }
+
+        .card-content {
+            padding: 1.5rem;
+            text-align: center;
+            flex-grow: 1;
+            background-color: var(--white);
+        }
+
+        .card-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .card-content p {
+            font-weight: 500;
+        }
+
+        /* INFORMACIÓ PRÀCTICA */
+        .info-box {
+            background-color: var(--white);
+            border-left: 5px solid var(--accent-color);
+            padding: 2rem;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .info-item p {
+            font-weight: 500;
+        }
+
+        /* OPINIONS (CARRUSEL) */
+        .reviews-carousel-container {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .reviews-carousel {
+            display: flex;
+            width: 100%;
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            gap: 1.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .reviews-carousel::-webkit-scrollbar {
+            height: 4px;
+        }
+        .reviews-carousel::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+        .reviews-carousel::-webkit-scrollbar-track {
+            background: #e0deda;
+        }
+
+        .review-card {
+            flex: 0 0 100%;
+            width: 100%;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            font-style: italic;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-weight: 500;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-card .author {
+            font-style: normal;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .review-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: background 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .review-btn.prev { left: -20px; }
+        .review-btn.next { right: -20px; }
+        .review-btn:hover { background: var(--accent-color); }
+
+        /* FOOTER */
+        footer {
+            background-color: #25332c;
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        footer h2 {
+            font-weight: 700;
+        }
+
+        footer p {
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .review-btn.prev { left: 0px; }
+            .review-btn.next { right: 0px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓ -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-link">
+                <img src="img/logo_text.png" alt="Racons de Os" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#visita">La Ruta</a></li>
+                <li><a href="#info">Informació</a></li>
+                <li><a href="#opinions">Opinions</a></li>
+                <li>
+                    <a href="mailto:raconsdeos@gmail.com?subject=Reserva%20Free%20Tour%20Racons%20de%20Os&body=Hola,%20m'agradaria%20reservar%20plaça%20per%20al%20Free%20Tour." 
+                       class="btn-nav">✉️ Reservar Plaça</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Descobreix l'Encant d'Os de Balaguer</h1>
+        <p>Un recorregut fascinant pel patrimoni històric, les tradicions i els paratges naturals del municipi. Reserva la teva plaça!</p>
+    </section>
+
+    <!-- LA VISITA -->
+    <section id="visita">
+        <h2 class="section-title">Un Free Tour a la teva mida</h2>
+        <div class="details-grid">
+            <!-- Targeta 1: Racons amb Història -->
+            <div class="card">
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('c1', -1)">◀</button>
+                    <div class="carousel" id="c1">
+                        <img src="img/foto1.jpg" alt="Castell d'Os antic" class="carousel-item">
+                        <img src="img/foto2.jpg" alt="Castell d'Os" class="carousel-item">
+                        <img src="img/foto3.jpeg" alt="Capella del monestir" class="carousel-item">
+                        <img src="img/foto4.jpg" alt="Absis actual del monestir" class="carousel-item">
+                        <img src="img/foto5.JPG" alt="Plaça del forn abans" class="carousel-item">
+                        <img src="img/foto6.PNG" alt="Plaça del forn actual" class="carousel-item">
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('c1', 1)">▶</button>
+                </div>
+                <div class="card-content">
+                    <h3>Racons amb Història</h3>
+                    <p>Descobreix l'evolució del Castell d'Os, el Monestir de les Avellanes i els racons més singulars de la vila a través del temps.</p>
+                </div>
+            </div>
+
+            <!-- Targeta 2: Racons amb Tradició -->
+            <div class="card">
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('c2', -1)">◀</button>
+                    <div class="carousel" id="c2">
+                        <img src="img/foto7.jpg" alt="Fosa de campana" class="carousel-item">
+                        <img src="img/foto8.JPG" alt="Campana" class="carousel-item">
+                        <img src="img/foto9.JPG" alt="Dinar dels campaners" class="carousel-item">
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('c2', 1)">▶</button>
+                </div>
+                <div class="card-content">
+                    <h3>Racons amb Tradició</h3>
+                    <p>Coneix de prop el forn de les campanes i les tradicions del municipi d'una manera propera.</p>
+                </div>
+            </div>
+
+            <!-- Targeta 3: Racons amb Natura -->
+            <div class="card">
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev" onclick="moveCarousel('c3', -1)">◀</button>
+                    <div class="carousel" id="c3">
+                        <img src="img/foto10.jpg" alt="Entorn natural d'Os de Balaguer" class="carousel-item">
+                        <img src="img/foto11.JPG" alt="Riu i entorn de Farfanya" class="carousel-item">
+                        <img src="img/foto12.jpg" alt="Entorn d'Aguilar" class="carousel-item">
+                    </div>
+                    <button class="carousel-btn next" onclick="moveCarousel('c3', 1)">▶</button>
+                </div>
+                <div class="card-content">
+                    <h3>Racons amb Natura</h3>
+                    <p>Gaudeix dels paisatges de la vall i de l'Espai Natural Protegit de Vessants de la Noguera Ribagorçana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMACIÓ PRÀCTICA -->
+    <section id="info">
+        <h2 class="section-title">Informació Pràctica</h2>
+        <div class="info-box">
+            <div class="info-item">
+                <h4>Durada</h4>
+                <p>1 hora i 30 minuts</p>
+            </div>
+            <div class="info-item">
+                <h4>Punt de Trobada</h4>
+                <p>Plaça Major d'Os de Balaguer</p>
+            </div>
+            <div class="info-item">
+                <h4>Preu</h4>
+                <p>100% Gratuït (places limitades)</p>
+            </div>
+            <div class="info-item">
+                <h4>Idiomes</h4>
+                <p>Català / Castellà</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPINIONS (AMB CARRUSEL) -->
+    <section id="opinions">
+        <h2 class="section-title">Què diuen els visitants</h2>
+        <div class="reviews-carousel-container">
+            <button class="review-btn prev" onclick="moveCarousel('reviewsCarousel', -1)">◀</button>
+            <div class="reviews-carousel" id="reviewsCarousel">
+                <div class="review-card">
+                    <p>"Moltes gràcies al guia per la seva gran atenció. Fas una bona feina , la gaudeixes i estimes el teu poble, hem dinat bé. Fins arreveure."</p>
+                    <div class="author">- M. Antonia i Jaume</div>
+                </div>
+                <div class="review-card">
+                    <p>"Ens ha encantat conèixer els racons amagats i les tradicions de la zona amb explicacions tan properes. Repetirem segur!"</p>
+                    <div class="author">- Anna M.</div>
+                </div>
+                <div class="review-card">
+                    <p>"Ha sigut una experiència única i molt agradable, sobretot per la dedicació del guia explicant cada detall. Ets un crack!:) GRÀCIES!!!"</p>
+                    <div class="author">- Lara i Gio</div>
+                </div>
+            </div>
+            <button class="review-btn next" onclick="moveCarousel('reviewsCarousel', 1)">▶</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="reserva">
+        <h2 style="margin-bottom: 1rem;">Vols apuntar-te al pròxim Free Tour?</h2>
+        <p style="margin-bottom: 2rem; opacity: 0.9;">Reserva la teva plaça prèvia per correu electrònic per assegurar la teva assistència.</p>
+        <a href="mailto:raconsdeos@gmail.com?subject=Reserva%20Free%20Tour%20Racons%20de%20Os&body=Hola,%20m'agradaria%20reservar%20plaça%20per%20al%20Free%20Tour." 
+           class="btn-primary">
+           ✉️ El teu viatge comença aquí
+        </a>
+        <p>&copy; 2026 Racons de Os</p>
+    </footer>
+
+    <!-- SCRIPT DE DESPLAÇAMENT DEL CARRUSEL -->
+    <script>
+        function moveCarousel(id, direction) {
+            const container = document.getElementById(id);
+            const scrollAmount = container.clientWidth;
+            container.scrollBy({
+                left: scrollAmount * direction,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
