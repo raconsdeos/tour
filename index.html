@@ -68,6 +68,12 @@
             display: block;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -102,7 +108,7 @@
         }
 
         .btn-nav:hover {
-            
+            background-color: var(--accent-color);
             color: var(--white);
         }
 
@@ -124,7 +130,7 @@
             background-color: var(--accent-hover);
         }
 
-        /* HERO SECTION (Ajustat el padding vertical per compensar l'absència del botó) */
+        /* HERO SECTION */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.25)), url('https://infotur.scene7.com/is/image/cta/151126_t036.07-066') center/cover no-repeat;
             color: var(--white);
@@ -377,9 +383,11 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            .nav-links { display: none; }
+            .nav-links { display: none; } /* Amaga els enllaços de text al mòbil però deixa el botó visible */
             .review-btn.prev { left: 0px; }
             .review-btn.next { right: 0px; }
+            .nav-container { padding: 0.8rem 1rem; }
+            .btn-nav { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -391,15 +399,15 @@
             <a href="#" class="logo-link">
                 <img src="img/logo_text.png" alt="Racons de Os" class="logo-img">
             </a>
-            <ul class="nav-links">
-                <li><a href="#visita">La Ruta</a></li>
-                <li><a href="#info">Informació</a></li>
-                <li><a href="#opinions">Opinions</a></li>
-                <li>
-                    <a href="mailto:raconsdeos@gmail.com?subject=Reserva%20Free%20Tour%20Racons%20de%20Os&body=Hola,%20m'agradaria%20reservar%20plaça%20per%20al%20Free%20Tour." 
-                       class="btn-nav">✉️ Reservar Plaça</a>
-                </li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#visita">La Ruta</a></li>
+                    <li><a href="#info">Informació</a></li>
+                    <li><a href="#opinions">Opinions</a></li>
+                </ul>
+                <a href="mailto:raconsdeos@gmail.com?subject=Reserva%20Free%20Tour%20Racons%20de%20Os&body=Hola,%20m'agradaria%20reservar%20plaça%20per%20al%20Free%20Tour." 
+                   class="btn-nav">✉️ Reservar Plaça</a>
+            </div>
         </div>
     </header>
 
